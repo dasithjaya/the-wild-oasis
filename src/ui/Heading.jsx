@@ -19,9 +19,9 @@ const Heading = styled.h1`
     props.type === "h3" &&
     css`
       font-size: 30px;
-      font-weight: 400;
+      font-weight: 600;
+      text-align: center;
     `}
-
     line-height: 100px
 `;
 
