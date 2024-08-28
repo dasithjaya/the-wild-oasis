@@ -73,6 +73,7 @@ function Menus({ children }) {
 
   const close = () => setOpenId("");
   const open = setOpenId;
+  //const open = (id) => setOpenId(id);
 
   return (
     <MenusContext.Provider
