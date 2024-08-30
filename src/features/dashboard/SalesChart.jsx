@@ -11,7 +11,13 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import {
+  eachDayOfInterval,
+  format,
+  formatDate,
+  isSameDay,
+  subDays,
+} from "date-fns";
 import { da } from "date-fns/locale";
 
 const StyledSalesChart = styled(DashboardBox)`
@@ -94,7 +100,10 @@ export default function SalesChart({ bookings, numDays }) {
 
   return (
     <StyledSalesChart>
-      <Heading as="h2">Sales</Heading>
+      <Heading as="h3">
+        Sales from {formatDate(allDays.at(0), "MMM dd yyyy")} &mdash;{" "}
+        {formatDate(allDays.at(-1), "MMM dd yyyy")}{" "}
+      </Heading>
       <ResponsiveContainer height={300} width="100%">
         <AreaChart data={data}>
           <XAxis
